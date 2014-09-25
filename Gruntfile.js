@@ -1,8 +1,14 @@
 module.exports = function (grunt) {
+    var paidPostName = "ad-assets-index"
+
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-shell');
+
+    //let's load the server package
+    grunt.loadNpmTasks('grunt-serve');
+
 
     var sources = [];
 
@@ -54,6 +60,10 @@ module.exports = function (grunt) {
             ]
         },
         watch: {
+            options:
+            {
+                livereload:35729
+            },
             files: [
                 '**/*.js',
                 '!node_modules/**/*.js',
@@ -71,11 +81,10 @@ module.exports = function (grunt) {
                 options: {                      // Options
                     stderr: false
                 },
-                command: './scooper.sh paid-post-name.html'
+                command: './scooper.sh '+paidPostName+'.html'
             }
         }
     });
 
     grunt.registerTask('default', ['jshint', 'concat:libs', 'concat:app', 'shell']);
-
 };
