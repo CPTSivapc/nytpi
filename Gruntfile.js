@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-    var paidPostName = "ad-assets-index"
+    var adAssetsIndex = "ad-assets/index"
 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -62,12 +62,12 @@ module.exports = function (grunt) {
         watch: {
             options:
             {
-                livereload:35729
+                livereload:35728
             },
             files: [
                 '**/*.js',
                 '!node_modules/**/*.js',
-                'body.html',
+                'htmlComponents/**/*.html',
                 '!js/lib/*.js',
                 '!js/app-build.js',
                 '!js/lib-build.js',
@@ -81,7 +81,7 @@ module.exports = function (grunt) {
                 options: {                      // Options
                     stderr: false
                 },
-                command: './scooper.sh '+paidPostName+'.html'
+                command: './scooper.sh '+adAssetsIndex+'.html'
             }
         }
     });
