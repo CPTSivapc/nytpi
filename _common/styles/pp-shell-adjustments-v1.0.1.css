@@ -1,0 +1,36 @@
+.shell
+{
+	max-width:1605px;
+	margin:47px auto 0 auto;
+}
+.navigation-edge
+{
+	box-shadow: none !important;
+	background-color: transparent;
+}
+.masthead
+{
+	padding-left: 0px;
+	border-bottom: 1px solid #ccc;
+	margin: 0 auto !important;
+	box-shadow: -1px 0 4px 0 #e2e2e2;
+}
+.masthead.masthead-theme-standard .container
+{
+	border:none;
+}
+.masthead.masthead-theme-standard .quick-navigation
+{
+	left:10px !important;
+}
+.ribbon
+{
+	width:100% !important;
+	margin: 47px auto -11px auto !important;
+	height: 94px;
+	
+}
+.ribbon-page-navigation
+{
+	display:none !important;
+}

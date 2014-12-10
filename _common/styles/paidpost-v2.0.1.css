@@ -1,0 +1,229 @@
+.main
+{
+	min-width:0;
+}
+.paid-top-bar
+{
+	width:100%;
+	max-width:1605px;
+}
+.paid-top-bar > div > *
+{
+	display:table-cell;
+	vertical-align: middle;
+}
+.paid-top-bar > div
+{
+	display:table;
+	table-layout: fixed;
+	width:100%;
+}
+.border-bar
+{
+
+	text-align:center;
+	width: 100%;
+	background-color: #E7F3FC;
+	color: #666;
+}
+.border-bar p
+{
+	font-size:0.6em;
+	padding: 5px 30px;
+	margin:0;
+	line-height:1.6em;
+}
+.main-bar
+{
+	height: 26px;
+	
+}
+.sub-bar
+{
+	background-color: white;
+	border-bottom: 1px solid #DBDBDB;
+	height:40px;
+}
+.sub-bar-content
+{
+	width:33%;
+	padding:0px 10px;
+	position:relative;
+}
+.mobile-trigger
+{
+	padding-bottom:10px;
+}
+.sub-bar-content img.pp-logo
+{
+	max-height:40px;
+	vertical-align: middle;
+}
+.sub-bar-content .social
+{
+	position:absolute;
+	height:27px;
+	overflow:hidden;
+	right:5px;
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-size:0.75em;
+}
+
+.sub-bar-content .social.hover
+{
+	overflow: visible;
+}
+.viewport-medium-10  .sub-bar-content .social.hover
+{
+	overflow: hidden;
+}
+
+.sub-bar-content .social ul
+{
+	border: 1px solid white;
+	padding:5px 10px;
+	margin:0;
+	list-style-type: none;
+	text-align:center;
+}
+.viewport-medium-10 .sub-bar-content .social ul
+{
+	border:none;
+	text-align:right;
+}
+
+.viewport-medium-10 .sub-bar-content .social .mobile-trigger
+{
+	display:none;
+}
+
+.sub-bar-content .social ul.hover
+{
+	border-color: #DBDBDB;
+	background-color: #E7F3FC;
+}
+.viewport-medium-10 .sub-bar-content .social ul.hover
+{
+	border-color: #FFFFFF;
+	background-color: #FFFFFF;
+}
+.viewport-medium-10 .sub-bar-content .social li:before
+{
+	width:17px;
+	height:17px;
+}
+.sub-bar-content .social li:before
+{
+	width:30px;
+	height:30px;
+}
+
+.sub-bar-content .social li
+{
+	position:relative;
+	cursor: pointer;
+	height:30px;
+	margin-bottom:5px;
+}
+.viewport-medium-10 .sub-bar-content .social li
+{
+	display:inline-block;
+	height:17px;
+}
+
+.sub-bar-content .social li a
+{
+	padding:0px 0px;
+}
+
+.viewport-medium-10 .sub-bar-content .social a span
+{
+	display:block;
+}
+.sub-bar-content .social a span
+{
+	display:none;
+}
+.sub-bar-content .icon
+{
+	width: 30px;
+	height: 30px;
+	background-size: contain;
+}
+
+.viewport-medium-10 .sub-bar-content .icon
+{
+	width: 16px;
+	height: 16px;
+	background-size: contain;
+}
+.addthis_button_email.icon
+{
+	background-image: url(http://graphics8.nytimes.com/ads/paidpost/macallan/images/share_email.png);
+}
+.viewport-medium-10 .addthis_button_email.icon
+{
+	background-image: none;
+}
+.addthis_button_facebook.icon
+{
+	background-image: url(http://graphics8.nytimes.com/ads/paidpost/macallan/images/share_facebook.png);
+}
+.viewport-medium-10 .addthis_button_facebook.icon
+{
+	background-image: none;
+}
+.addthis_button_twitter.icon
+{
+	background-image: url(http://graphics8.nytimes.com/ads/paidpost/macallan/images/share_twitter.png);
+}
+.viewport-medium-10 .addthis_button_twitter.icon
+{
+	background-image: none;
+}
+.addthis_button_linkedin.icon 
+{
+	background-image: url(http://graphics8.nytimes.com/ads/paidpost/macallan/images/share_linkedin.png);
+}
+.viewport-medium-10 .addthis_button_linkedin.icon
+{
+	background-image: none;
+}
+.viewport-medium-10 .sub-bar-content .icon
+{
+	/*display:none;*/
+}
+article *
+{
+	font-family: Arial, Helvetica, sans-serif;
+	max-width:1605px;
+
+}
+article .left
+{
+	text-align: left;
+}
+article .center
+{
+	text-align: center;
+}
+article .right
+{
+	text-align: right;
+}
+article .hide
+{
+	display:none;
+}
+.main
+{
+	margin: 0 20px;
+}
+/*Adding this mainly for template usage since magum.css has auto height and 100% width for images*/
+article img
+{
+	height:auto;
+	max-width:100%;
+}
