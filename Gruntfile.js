@@ -81,7 +81,9 @@ module.exports = function (grunt) {
                 options: {                      // Options
                     stderr: false
                 },
-                command: './scooper.sh '+adAssetsIndex+'.html'
+                //removing pass of ad-assets since there's no need for it right now.
+                //command: './scooper.sh '+adAssetsIndex+'.html'
+                command: './scooper.sh'
             }
         }
     });

@@ -29,11 +29,12 @@ cat htmlComponents/body.html | sed "s/$ASSET_URL_PATH_RP/$ASSET_URL/g" | sed "s/
 
 
 
-echo "Building staging version into $1"
+#removing ad-assets creation for the time being since it just seems to be a duplicate of index.html
+#echo "Building staging version into $1"
 
-cat htmlComponents/nyt5Head.html > $1
-cat htmlComponents/body.html | sed "s/$ASSET_URL_PATH_RP//g" | sed "s/$VIDEO_ASSET_URL_RP/vids\//g" >> $1
-cat htmlComponents/nyt5Foot.html >> $1
+#cat htmlComponents/nyt5Head.html > $1
+#cat htmlComponents/body.html | sed "s/$ASSET_URL_PATH_RP//g" | sed "s/$VIDEO_ASSET_URL_RP/vids\//g" >> $1
+#cat htmlComponents/nyt5Foot.html >> $1
 
 
 
