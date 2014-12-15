@@ -1,7 +1,7 @@
 var paidRequire = require.config({
 //    baseUrl: 'http://graphics8.nytimes.com/ads/paidpost/google/js',
-    baseUrl: 'js/',
-    appDir: '../',
+    baseUrl: './',
+    appDir: './',
     context: 'paidpost',
     shim: {
         underscore: {
@@ -21,9 +21,9 @@ var paidRequire = require.config({
     },
     paths: {
         VHS:"http://graphics8.nytimes.com/video/vhs/build/vhs-latest.min",
-        jquery: './lib/jquery.min',
-        backbone: './lib/backbone-min',
-        underscore: './lib/underscore-min'
+        jquery: PaidPost.url.js + 'js/lib/jquery.min',
+        backbone: PaidPost.url.js + 'js/lib/backbone-min',
+        underscore: PaidPost.url.js + 'js/lib/underscore-min'
     }
 });
 

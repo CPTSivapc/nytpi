@@ -1,5 +1,8 @@
 module.exports = function (grunt) {
-    var adAssetsIndex = "ad-assets/index"
+    var adAssetsIndex = "ad-assets/index",
+        jsVersion = '1\.01', // escaped for regex
+        cssVersion = '1\.01';  // escaped for regex
+
 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -35,7 +38,7 @@ module.exports = function (grunt) {
                     'js/src/app.js',
                     'js/src/tail.js'
                 ],
-                dest: 'js/app-build.js'
+                dest: 'js/app-build-v' + jsVersion + '.js'
             }
         },
         jshint: {
@@ -69,7 +72,7 @@ module.exports = function (grunt) {
                 '!node_modules/**/*.js',
                 'htmlComponents/**/*.html',
                 '!js/lib/*.js',
-                '!js/app-build.js',
+                '!js/app-build-v' + jsVersion + '.js',
                 '!js/lib-build.js',
                 'js/lib/paid-video.js'
             ],
@@ -83,7 +86,7 @@ module.exports = function (grunt) {
                 },
                 //removing pass of ad-assets since there's no need for it right now.
                 //command: './scooper.sh '+adAssetsIndex+'.html'
-                command: './scooper.sh'
+                command: './scooper.sh ' + jsVersion + ' ' + cssVersion
             }
         }
     });
