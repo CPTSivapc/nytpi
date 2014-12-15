@@ -18,9 +18,12 @@ VIDEO_ASSET_URL="http\:\/\/video1\.nytimes\.com\/video\/ads\/paidpost\/$CLIENT_N
 
 echo "Building local version into index.html"
 
-cat htmlComponents/nyt5Head.html | sed "s/\[CLIENT\]/$CLIENT_NAME/g" > index.html
-cat htmlComponents/body.html | sed "s/$ASSET_URL_PATH_RP//g" | sed "s/$VIDEO_ASSET_URL_RP/vids\//g" >> index.html
-cat htmlComponents/nyt5Foot.html >> index.html
+cat htmlComponents/nyt5Head.html > tempIndex.html
+cat htmlComponents/body.html | sed "s/$ASSET_URL_PATH_RP//g" | sed "s/$VIDEO_ASSET_URL_RP/vids\//g" >> tempIndex.html
+cat htmlComponents/nyt5Foot.html >> tempIndex.html
+
+cat tempIndex.html | sed "s/\[CLIENT\]/$CLIENT_NAME/g" > index.html
+rm tempIndex.html
 
 echo "Building scoop version into scoop.html"
 
