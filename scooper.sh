@@ -1,14 +1,14 @@
     #!/bin/sh
-
-CLIENT_NAME="[CLIENT]"
+CLIENT_NAME="CLIENT"
+CLIENT_PATHNAME="[CLIENT_PATH]"
 PROJECT_NAME="[PROJECT]"
 
 
 ASSET_URL_PATH_RP="---pppath---"
-ASSET_URL="http\:\/\/graphics8\.nytimes\.com\/ads\/paidpost\/$CLIENT_NAME\/$PROJECT_NAME\/"
+ASSET_URL="http\:\/\/graphics8\.nytimes\.com\/ads\/paidpost\/$CLIENT_PATHNAME\/$PROJECT_NAME\/"
 
 VIDEO_ASSET_URL_RP="---ppvideopath---"
-VIDEO_ASSET_URL="http\:\/\/video1\.nytimes\.com\/video\/ads\/paidpost\/$CLIENT_NAME\/$PROJECT_NAME\/"
+VIDEO_ASSET_URL="http\:\/\/video1\.nytimes\.com\/video\/ads\/paidpost\/$CLIENT_PATHNAME\/$PROJECT_NAME\/"
 
 #HOLDING OFF ON THIS UNTIL CAN GET SOMETHING STABLE, MAYBE DO THIS VIA NODE INSTEAD?
 #echo "lets test for curl"
