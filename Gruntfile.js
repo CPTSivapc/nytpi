@@ -12,7 +12,6 @@ module.exports = function (grunt) {
     //let's load the server package
     grunt.loadNpmTasks('grunt-serve');
 
-
     var sources = [];
 
     grunt.initConfig({
