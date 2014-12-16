@@ -22,9 +22,14 @@ mkdir _temp
 echo "Acquiring up to date templates"
 curl --cookie nada --location http://paidpost.nytimes.com/client/title.html  > _temp/full.html
 
-cat _temp/full.html | sed -n '/\<\!DOCT/,/\<article/p' > htmlComponents/nyt5Head.html
-cat _temp/full.html | sed -n '/\<\/article/,/\<\/html\>/p' > htmlComponents/nyt5Foot.html
-
+# check to make sure the file size is greater than 0
+if [ -s _temp/full.html ]
+    then
+        cat _temp/full.html | sed -n '/\<\!DOCT/,/\<article/p' > htmlComponents/nyt5Head.html
+        cat _temp/full.html | sed -n '/\<\/article/,/\<\/html\>/p' > htmlComponents/nyt5Foot.html
+    else
+        echo "Warning: No network connection available, template not updated"
+fi
 
 #
 # Begin creating environment specific builds
@@ -42,5 +47,5 @@ cat htmlComponents/nyt5Foot.html >> index.html
 echo "Building scoop version into scoop.html"
 cat _temp/body.html | sed "s/$ASSET_URL_PATH_RP/$ASSET_URL/g" | sed "s/$VIDEO_ASSET_URL_RP/$VIDEO_ASSET_URL/g" > scoop.html
 
-rm -rf _temp
+#rm -rf _temp
 
