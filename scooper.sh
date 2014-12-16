@@ -47,5 +47,5 @@ cat htmlComponents/nyt5Foot.html >> index.html
 echo "Building scoop version into scoop.html"
 cat _temp/body.html | sed "s/$ASSET_URL_PATH_RP/$ASSET_URL/g" | sed "s/$VIDEO_ASSET_URL_RP/$VIDEO_ASSET_URL/g" > scoop.html
 
-#rm -rf _temp
+rm -rf _temp
 
