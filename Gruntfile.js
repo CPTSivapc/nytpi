@@ -7,11 +7,13 @@ module.exports = function (grunt) {
         projectPath = "title-of-project", // following scoop's rules for urls
         jsVersion = '1\.01', // escaped for regex
         cssVersion = '1\.01';  // escaped for regex
+        grunt.jsVersion = jsVersion;
 
 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-shell');
 
     //let's load the server package
@@ -91,6 +93,18 @@ module.exports = function (grunt) {
                 //removing pass of ad-assets since there's no need for it right now.
                 //command: './scooper.sh '+adAssetsIndex+'.html'
                 command: './scooper.sh "' + client + '" "' + clientPath+ '" "' + projectPath+ '" "' + jsVersion+ '" "' + cssVersion +'"'
+            }
+        },
+        uglify: {
+            options:
+            {
+                mangle: false
+            },
+            my_target:
+            {
+                files: {
+                'dist/app-build-v<%= grunt.jsVersion %>.min.js': ['js/app-build-v' + jsVersion + '.js']
+                }
             }
         }
     });
