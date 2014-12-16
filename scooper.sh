@@ -1,8 +1,9 @@
 #!/bin/sh
-CLIENT_NAME="CLIENT"
-CLIENT_PATHNAME="[CLIENT_PATH]"
+CLIENT_NAME_RP="---client---"
+CLIENT_NAME=$1
+CLIENT_PATHNAME=$2
 
-PROJECT_NAME="[PROJECT]"
+PROJECT_NAME=$3
 
 ASSET_URL_PATH_RP="---pppath---"
 ASSET_URL="http\:\/\/graphics8\.nytimes\.com\/ads\/paidpost\/$CLIENT_PATHNAME\/$PROJECT_NAME\/"
@@ -11,10 +12,10 @@ VIDEO_ASSET_URL_RP="---ppvideopath---"
 VIDEO_ASSET_URL="http\:\/\/video1\.nytimes\.com\/video\/ads\/paidpost\/$CLIENT_PATHNAME\/$PROJECT_NAME\/"
 
 JS_VERSION_RP="---jsversion---"
-JS_VERSION=$1
+JS_VERSION=$4
 
 CSS_VERSION_RP="---cssversion---"
-CSS_VERSION=$2
+CSS_VERSION=$5
 
 mkdir _temp
 
@@ -36,7 +37,7 @@ fi
 #
 
 # Update body with cross environment replaces
-cat htmlComponents/body.html | sed "s/$JS_VERSION_RP/$JS_VERSION/g" | sed "s/$CSS_VERSION_RP/$CSS_VERSION/g" > _temp/body.html
+cat htmlComponents/body.html | sed "s/$JS_VERSION_RP/$JS_VERSION/g" | sed "s/$CSS_VERSION_RP/$CSS_VERSION/g" | sed "s/$CLIENT_NAME_RP/$CLIENT_NAME/g" > _temp/body.html
 
 echo "Building local version into index.html"
 
