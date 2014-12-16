@@ -1,20 +1,20 @@
 #!/bin/sh
+CLIENT_NAME="CLIENT"
+CLIENT_PATHNAME="[CLIENT_PATH]"
 
-CLIENT_NAME="[CLIENT]"
 PROJECT_NAME="[PROJECT]"
 
 ASSET_URL_PATH_RP="---pppath---"
-ASSET_URL="http\:\/\/graphics8\.nytimes\.com\/ads\/paidpost\/$CLIENT_NAME\/$PROJECT_NAME\/"
+ASSET_URL="http\:\/\/graphics8\.nytimes\.com\/ads\/paidpost\/$CLIENT_PATHNAME\/$PROJECT_NAME\/"
 
 VIDEO_ASSET_URL_RP="---ppvideopath---"
-VIDEO_ASSET_URL="http\:\/\/video1\.nytimes\.com\/video\/ads\/paidpost\/$CLIENT_NAME\/$PROJECT_NAME\/"
+VIDEO_ASSET_URL="http\:\/\/video1\.nytimes\.com\/video\/ads\/paidpost\/$CLIENT_PATHNAME\/$PROJECT_NAME\/"
 
 JS_VERSION_RP="---jsversion---"
 JS_VERSION=$1
 
 CSS_VERSION_RP="---cssversion---"
 CSS_VERSION=$2
-
 
 mkdir _temp
 
@@ -26,6 +26,9 @@ cat _temp/full.html | sed -n '/\<\!DOCT/,/\<article/p' > htmlComponents/nyt5Head
 cat _temp/full.html | sed -n '/\<\/article/,/\<\/html\>/p' > htmlComponents/nyt5Foot.html
 
 
+#
+# Begin creating environment specific builds
+#
 
 # Update body with cross environment replaces
 cat htmlComponents/body.html | sed "s/$JS_VERSION_RP/$JS_VERSION/g" | sed "s/$CSS_VERSION_RP/$CSS_VERSION/g" > _temp/body.html
