@@ -5,8 +5,8 @@ module.exports = function (grunt) {
     var client = "Client", // client name readable
         clientPath = "client", // client name used in path
         projectPath = "title-of-project", // following scoop's rules for urls
-        jsVersion = '1\.01', // escaped for regex
-        cssVersion = '1\.01';  // escaped for regex
+        jsVersion = '1\.00', // escaped for regex
+        cssVersion = '1\.00';  // escaped for regex
         grunt.jsVersion = jsVersion;
 
 
@@ -76,7 +76,7 @@ module.exports = function (grunt) {
             files: [
                 '**/*.js',
                 '!node_modules/**/*.js',
-                'htmlComponents/**/*.html',
+                'htmlComponents/body.html',
                 '!js/lib/*.js',
                 '!js/app-build-v' + jsVersion + '.js',
                 '!js/lib-build.js',
