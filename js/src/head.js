@@ -14,7 +14,7 @@ var paidRequire = require.config({
         //     ],
         //     exports: 'Backbone'
         // },
-        // VHS: {
+        VHS: {
             deps: ['jquery'],
             exports: 'VHS'
         }
@@ -27,8 +27,6 @@ var paidRequire = require.config({
     }
 });
 
-paidRequire(['underscore', 'backbone', 'jquery', 'VHS'], function (_, Backbone, $, VHS) {
+paidRequire(['jquery', 'VHS'], function ($, VHS) {
 
     'use strict';
-
-    var dispatch = _.clone(Backbone.Events);
