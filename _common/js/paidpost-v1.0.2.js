@@ -56,7 +56,7 @@
     }
     function setSocialForMobile()
     {
-        $('.mobile-trigger').on('click touchstart', function()
+        $('.mobile-trigger').on('touchend', function()
         {
             if($('.sub-bar-content .social.hover').length>0)
             {
