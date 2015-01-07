@@ -3,24 +3,24 @@
     var PaidPost = PaidPost || {};
 
     PaidPost.url = PaidPost.urls || {};
-    PaidPost.url.assets = 'http://graphics8.nytimes.com/ads/paidpost/client/title-of-project/';
-    PaidPost.url.videos = 'http://video1.nytimes.com/video/ads/paidpost/client/title-of-project/';
+    PaidPost.url.assets = '---pppath---';
+    PaidPost.url.videos = '---ppvideopath---';
 
     PaidPost.version = PaidPost.version || {};
-    PaidPost.version.js = '1.00';
-    PaidPost.version.css = '1.00';
+    PaidPost.version.js = '---jsversion---';
+    PaidPost.version.css = '---cssversion---';
 </script>
 
 <link rel="stylesheet" type="text/css" media="screen" href="http://graphics8.nytimes.com/ads/paidpost/common/styles/pp-shell-adjustments-v1.0.1.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="http://graphics8.nytimes.com/ads/paidpost/common/styles/paidpost-v2.0.1.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="http://graphics8.nytimes.com/ads/paidpost/client/title-of-project/styles/styles-v1.00.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="---pppath---styles/styles-v---cssversion---.css" />
 
 
   <!-- keep the container the same height as teh paid-top-bar to prevent jumping when locking -->
   <div id="paid-top-bar-container" class="paid-top-bar">
     <div id="paid-top-bar" class="paid-top-bar">
         <div class="border-bar main-bar">
-          <p class="paid-top-border-txt">PAID FOR AND POSTED BY Client</p>
+          <p class="paid-top-border-txt">PAID FOR AND POSTED BY ---client---</p>
         </div>
         <div class="sub-bar">
           <div class="sub-bar-content left">
@@ -28,7 +28,7 @@
           </div>
           <div class="sub-bar-content center">
             <a href="##########" target="_blank" class="paid-top-logo">
-              <img class="pp-logo" src="images/logo.png" alt="Client">
+              <img class="pp-logo" src="images/logo.png" alt="---client---">
             </a>
           </div>
           <div class="sub-bar-content right">
@@ -53,7 +53,7 @@
 
   </main>
   <div class="border-bar paid-bottom-border">
-      <p class="paid-disclaimer">This page was paid for and produced by Client. The news and editorial staffs of The New York Times had no role in its preparation.</p>
+      <p class="paid-disclaimer">This page was paid for and produced by ---client---. The news and editorial staffs of The New York Times had no role in its preparation.</p>
   </div>
 
 <script>
@@ -133,4 +133,4 @@
         })
     </script>
     <script src="http://graphics8.nytimes.com/ads/paidpost/common/js/paidpost-v1.0.2.js"></script>
-    <script src="http://graphics8.nytimes.com/ads/paidpost/client/title-of-project/js/app-build-v1.00.js"></script>
+    <script src="---pppath---js/app-build-v---jsversion---.js"></script>

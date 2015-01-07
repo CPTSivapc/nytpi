@@ -1,14 +1,23 @@
 module.exports = function (grunt) {
-    var paidPostName = "ad-assets-index"
+
+
+
+    var client = "Client", // client name readable
+        clientPath = "client", // client name used in path
+        projectPath = "title-of-project", // following scoop's rules for urls
+        jsVersion = '1\.00', // escaped for regex
+        cssVersion = '1\.00';  // escaped for regex
+        grunt.jsVersion = jsVersion;
+
 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-shell');
 
     //let's load the server package
     grunt.loadNpmTasks('grunt-serve');
-
 
     var sources = [];
 
@@ -35,7 +44,7 @@ module.exports = function (grunt) {
                     'js/src/app.js',
                     'js/src/tail.js'
                 ],
-                dest: 'js/app-build.js'
+                dest: 'js/app-build-v' + jsVersion + '.js'
             }
         },
         jshint: {
@@ -62,14 +71,14 @@ module.exports = function (grunt) {
         watch: {
             options:
             {
-                livereload:35729
+                livereload:35728
             },
             files: [
                 '**/*.js',
                 '!node_modules/**/*.js',
-                'body.html',
+                'htmlComponents/body.html',
                 '!js/lib/*.js',
-                '!js/app-build.js',
+                '!js/app-build-v' + jsVersion + '.js',
                 '!js/lib-build.js',
                 'js/lib/paid-video.js'
             ],
@@ -81,7 +90,21 @@ module.exports = function (grunt) {
                 options: {                      // Options
                     stderr: false
                 },
-                command: './scooper.sh '+paidPostName+'.html'
+                //removing pass of ad-assets since there's no need for it right now.
+                //command: './scooper.sh '+adAssetsIndex+'.html'
+                command: './scooper.sh "' + client + '" "' + clientPath+ '" "' + projectPath+ '" "' + jsVersion+ '" "' + cssVersion +'"'
+            }
+        },
+        uglify: {
+            options:
+            {
+                mangle: false
+            },
+            my_target:
+            {
+                files: {
+                'dist/app-build-v<%= grunt.jsVersion %>.min.js': ['js/app-build-v' + jsVersion + '.js']
+                }
             }
         }
     });

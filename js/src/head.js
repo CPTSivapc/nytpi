@@ -1,19 +1,19 @@
 var paidRequire = require.config({
 //    baseUrl: 'http://graphics8.nytimes.com/ads/paidpost/google/js',
-    baseUrl: 'js/',
-    appDir: '../',
+    baseUrl: './',
+    appDir: './',
     context: 'paidpost',
     shim: {
-        underscore: {
-            exports: '_'
-        },
-        backbone: {
-            deps: [
-                'underscore',
-                'jquery'
-            ],
-            exports: 'Backbone'
-        },
+        // underscore: {
+        //     exports: '_'
+        // },
+        // backbone: {
+        //     deps: [
+        //         'underscore',
+        //         'jquery'
+        //     ],
+        //     exports: 'Backbone'
+        // },
         VHS: {
             deps: ['jquery'],
             exports: 'VHS'
@@ -21,14 +21,12 @@ var paidRequire = require.config({
     },
     paths: {
         VHS:"http://graphics8.nytimes.com/video/vhs/build/vhs-latest.min",
-        jquery: './lib/jquery.min',
-        backbone: './lib/backbone-min',
-        underscore: './lib/underscore-min'
+        jquery: PaidPost.url.assets + 'js/lib/jquery.min'
+        // backbone: PaidPost.url.js + 'js/lib/backbone-min',
+        // underscore: PaidPost.url.js + 'js/lib/underscore-min'
     }
 });
 
-paidRequire(['underscore', 'backbone', 'jquery', 'VHS'], function (_, Backbone, $, VHS) {
+paidRequire(['jquery', 'VHS'], function ($, VHS) {
 
     'use strict';
-
-    var dispatch = _.clone(Backbone.Events);
