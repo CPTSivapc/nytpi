@@ -29,7 +29,7 @@
             setSocialForMobile();
         if($('*').hasClass('mobile'))
         {
-            return;
+            //return;
         }
         
         var fixedList = $('*').filter(function() {
@@ -38,7 +38,7 @@
                                                 });
         $(fixedList).each(function(index, el)
         {
-            if( $(el).outerHeight() >= $('#paid-top-bar').offset().top )
+            if( $(el).outerHeight() > $('#paid-top-bar').offset().top )
                 {
                     return true;
                 }

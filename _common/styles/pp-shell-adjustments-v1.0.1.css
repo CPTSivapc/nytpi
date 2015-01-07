@@ -3,6 +3,10 @@
 	max-width:1605px;
 	margin:47px auto 0 auto;
 }
+.mobile .shell
+{
+	margin-top:48px;
+}
 .navigation-edge
 {
 	box-shadow: none !important;
@@ -10,6 +14,7 @@
 }
 .masthead
 {
+	box-sizing: border-box;
 	padding-left: 0px;
 	border-bottom: 1px solid #ccc;
 	margin: 0 auto !important;
@@ -36,4 +41,12 @@
 }
 .story.theme-main {
 	margin-top: 0;
+}
+.ribbon
+{
+	position: relative !important;
+}
+.ribbon-page-navigation
+{
+	display:none !important;
 }
