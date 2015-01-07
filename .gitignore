@@ -1,1 +1,6 @@
 node_modules/*
+index.html
+
+htmlComponents/nyt5Foot.html
+
+htmlComponents/nyt5Head.html
