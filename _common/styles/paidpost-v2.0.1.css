@@ -56,7 +56,8 @@
 }
 .sub-bar-content img.pp-logo
 {
-	max-height:40px;
+	/*max-height:40px;*/
+	max-width:100%;
 	vertical-align: middle;
 }
 .sub-bar-content .social
