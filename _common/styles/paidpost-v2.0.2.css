@@ -6,6 +6,9 @@
 {
 	width:100%;
 	max-width:1605px;
+	/*Not a big fan of this but need to set a static height for the container and contents to match for lock to top*/
+	height:67px;
+
 }
 .paid-top-bar > div > *
 {
