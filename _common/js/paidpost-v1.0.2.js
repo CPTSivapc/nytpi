@@ -38,10 +38,12 @@
                                                 });
         $(fixedList).each(function(index, el)
         {
-            if( $(el).outerHeight() > $('#paid-top-bar').offset().top )
-                {
-                    return true;
-                }
+            var elInH = Math.round($(el).innerHeight());
+            var ptbTop = Math.round($('#paid-top-bar').offset().top);
+            if( elInH > ptbTop )
+            {
+                return true;
+            }
             topPosition += $(el).outerHeight();
         });
 
