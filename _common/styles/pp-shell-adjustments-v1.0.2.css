@@ -3,6 +3,10 @@
 	max-width:1605px;
 	margin:48px auto 0 auto;
 }
+.app-paidpost .shell
+{
+	margin:0;
+}
 /*.mobile .shell
 {
 	margin-top:48px;
