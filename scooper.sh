@@ -26,8 +26,8 @@ curl --cookie nada --location http://paidpost.nytimes.com/client/title.html  > _
 # check to make sure the file size is greater than 0
 if [ -s _temp/full.html ]
     then
-        cat _temp/full.html | sed -n '/\<\!DOCT/,/\<article/p' > htmlComponents/nyt5Head.html
-        cat _temp/full.html | sed -n '/\<\/article/,/\<\/html\>/p' > htmlComponents/nyt5Foot.html
+        cat _temp/full.html | sed -n '/<!DOCTYPE/,/<article/p' > htmlComponents/nyt5Head.html
+        cat _temp/full.html | sed -n '/<\/article>/,/<\/html>/p' > htmlComponents/nyt5Foot.html
     else
         echo "Warning: No network connection available, template not updated"
 fi

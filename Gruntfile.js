@@ -4,7 +4,7 @@ module.exports = function (grunt) {
 
     var client = "Client", // client name readable
         clientPath = "client", // client name used in path
-        projectPath = "title-of-project", // following scoop's rules for urls
+        projectPath = "NYT", // following scoop's rules for urls
         jsVersion = '1\.00', // escaped for regex
         cssVersion = '1\.00';  // escaped for regex
         grunt.jsVersion = jsVersion;
@@ -92,7 +92,8 @@ module.exports = function (grunt) {
                 },
                 //removing pass of ad-assets since there's no need for it right now.
                 //command: './scooper.sh '+adAssetsIndex+'.html'
-                command: './scooper.sh "' + client + '" "' + clientPath+ '" "' + projectPath+ '" "' + jsVersion+ '" "' + cssVersion +'"'
+                //command: './scooper.sh "' + client + '" "' + clientPath+ '" "' + projectPath+ '" "' + jsVersion+ '" "' + cssVersion +'"'
+                command: 'scooper.sh "' + client + '" "' + clientPath+ '" "' + projectPath+ '" "' + jsVersion+ '" "' + cssVersion +'"'
             }
         },
         uglify: {
