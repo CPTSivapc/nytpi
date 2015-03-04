@@ -338,7 +338,8 @@ a.button:hover {
 }
 /*Article page star here*/
 #story {
-	width: 75%;
+	width: 100%;
+	max-width:1170px;
 	 margin: 0 auto;
 }
 hr {
@@ -367,6 +368,8 @@ hr.light {
 .kicker-label a {
 		color: #000;
 		font-weight: bold;
+		margin-top: 10px;
+display: block;
 }
 .story-heading {
 	margin: 15px 0;
@@ -416,3 +419,48 @@ footer.story-footer, .top-story {
 	width: 100%;
 	margin: 10px 0;
 }
+.paid-top-bar {
+z-index:9999!important;
+}
+
+.story.theme-main .extended-byline, .story.theme-main .extended-byline.no-thumb .byline:before {width:100%}
+
+header .container, footer {
+    margin: 0 auto;
+    max-width: 1170px;
+    width: 100%;
+}
+
+.top-story > a {
+    font-size: 12px;
+}
+.masthead .user-tools{
+      padding-right:0;
+}
+.paid-top-bar > div.sub-bar, .paid-top-bar > div.main-bar
+{
+max-width:1170px;
+}
+.paid-bottom-border
+{
+max-width:1170px;
+ margin: 0 auto 5px;
+}
+@media screen and (max-width: 960px) {
+
+}
+
+@media screen and (max-width: 480px) {
+.story.theme-main .extended-byline .byline-column{
+	font-size:
+	}
+.story.theme-main .extended-byline.no-thumb .byline{
+	font-size:8px;
+	}
+	p, li, dt, dd{
+		font-size:12px;
+	}
+	.story .byline-sharetools-container, .content { width: 100%;}
+.story .byline-sharetools-container ul li { width: 100%; text-align: center; }
+}
+
